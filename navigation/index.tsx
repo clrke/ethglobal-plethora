@@ -27,6 +27,7 @@ import {
   RootTabScreenProps,
 } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import InterestedScreen from "../screens/InterestedScreen";
 
 export default function Navigation({
   colorScheme,
@@ -116,6 +117,15 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
         }}
       />
+      <BottomTab.Screen
+        name="Interested"
+        component={InterestedScreen}
+        options={{
+          title: 'Tab Two',
+          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+        }}
+      />
+
     </BottomTab.Navigator>
   );
 }
