@@ -3,16 +3,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DiscoverScreen } from "../screens/Discover";
 import { Ionicons } from "@expo/vector-icons";
 import { DefaultColor } from "../constants/Colors";
+import { HomeParamList } from "../types";
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<HomeParamList>();
 
 export default function CustomTabNavigator() {
     return (
         <Tab.Navigator
             initialRouteName="Play"
             screenOptions={{
+                headerShown: false,
                 tabBarStyle: {
-                    height: 120,
+                    height: 100,
                     justifyContent: 'center',
                     borderTopLeftRadius: 30,
                     borderTopRightRadius: 30,
@@ -45,7 +47,7 @@ export default function CustomTabNavigator() {
                 name="Play"
                 component={DiscoverScreen}
                 options={{
-                    tabBarIcon: ({ color }) => <TabBarIcon name="play-circle-outline" color={color} size={70} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="play-circle-outline" color={color} size={60} />,
                 }}
             />
             <Tab.Screen
@@ -71,5 +73,5 @@ function TabBarIcon(props: {
     color: string;
     size?: number;
 }) {
-    return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+    return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
 }

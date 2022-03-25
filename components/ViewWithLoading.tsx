@@ -7,11 +7,13 @@ import {
   StyleSheet,
   ViewStyle,
   SafeAreaView,
+  View,
 } from 'react-native';
 import Loader from './Loader';
 import { HeaderHeightContext } from '@react-navigation/elements';
 import useColorScheme from '../hooks/useColorScheme';
 import { DefaultColor } from '../constants/Colors';
+import Header from './Header/Header';
 
 interface HeaderProps {
   children: React.ReactNodeArray | React.ReactNode;
@@ -43,12 +45,15 @@ export default function ViewWithLoading({
               {
                 flex: 1,
                 zIndex: 1,
-                backgroundColor: DefaultColor.white,
+                backgroundColor: DefaultColor.main
               },
             ]}
           >
-            {children}
-            {loading && <Loader />}
+            <View style={{ backgroundColor: DefaultColor.white, flex: 1 }}>
+              <Header />
+              {children}
+              {loading && <Loader />}
+            </View>
           </SafeAreaView>
         </KeyboardAvoidingView>
       )}

@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import ViewWithLoading from '../../components/ViewWithLoading';
 
 export default function DiscoverScreen() {
     return (
         <ViewWithLoading loading={false}>
+            <View style={{ backgroundColor: 'white' }}>
 
+            </View>
         </ViewWithLoading>
     );
 }
@@ -13,7 +15,5 @@ export default function DiscoverScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 });
