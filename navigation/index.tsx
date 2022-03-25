@@ -28,6 +28,7 @@ import {
 } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import InterestedScreen from "../screens/InterestedScreen";
+import CustomTabNavigator from './CustomTabNavigator';
 
 export default function Navigation({
   colorScheme,
@@ -50,14 +51,21 @@ export default function Navigation({
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
+         <Stack.Screen
+        name="Interested"
+        component={InterestedScreen}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="Root"
+        component={CustomTabNavigator}
+        options={{ headerShown: false }}
+      />
+   
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}

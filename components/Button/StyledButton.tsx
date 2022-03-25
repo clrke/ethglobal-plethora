@@ -24,7 +24,7 @@ export function ButtonComponent(props: IProps) {
                 buttonStyle={[styles.buttonStyle, { backgroundColor: props.backgroundColor, }]}
                 type={props.type ? props.type : "solid"}
                 onPress={props.onPress}
-                titleStyle={[{ fontFamily: 'poppins-regular' }, props.titleStyle]}
+                titleStyle={[{ fontFamily: 'monstserrat-regular' }, props.titleStyle]}
                 containerStyle={[{ width: '100%' }, props.buttonStyle]}
                 icon={
                     props.icon &&
