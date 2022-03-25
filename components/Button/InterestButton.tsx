@@ -15,14 +15,15 @@ interface IProps {
     icon?: { name: any, color: string | undefined };
     titleStyle?: StyleProp<TextStyle>;
     buttonStyle?: StyleProp<ViewStyle>;
+    selected?: boolean;
 }
 
 export function InterestButton(props: IProps) {
 
     return (
-           <TouchableOpacity style={styles.surface} >
-            <MontserratText style={{color: DefaultColor.white}}>{props.title}</MontserratText>
-           </TouchableOpacity>
+        <TouchableOpacity style={[styles.surface, props.selected && { backgroundColor: DefaultColor.main }]} >
+            <MontserratText style={{ color: props.selected ? DefaultColor.white : DefaultColor.black }}>{props.title}</MontserratText>
+        </TouchableOpacity>
     );
 }
 
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 5,
         borderRadius: 20,
-        backgroundColor: DefaultColor.main,
+        backgroundColor: DefaultColor.white,
     },
 
 });

@@ -4,7 +4,7 @@ import ViewWithLoading from '../../components/ViewWithLoading';
 
 export default function DiscoverScreen() {
     return (
-        <ViewWithLoading loading={false}>
+        <ViewWithLoading loading={false} header>
             <View style={{ backgroundColor: 'white' }}>
 
             </View>

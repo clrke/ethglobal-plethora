@@ -19,12 +19,14 @@ interface HeaderProps {
   children: React.ReactNodeArray | React.ReactNode;
   style?: StyleProp<ViewStyle>;
   loading: boolean;
+  header?: boolean;
 }
 
 export default function ViewWithLoading({
   children,
   style,
   loading,
+  header
 }: HeaderProps) {
   return (
     <HeaderHeightContext.Consumer>
@@ -45,15 +47,12 @@ export default function ViewWithLoading({
               {
                 flex: 1,
                 zIndex: 1,
-                backgroundColor: DefaultColor.main
               },
             ]}
           >
-            <View style={{ backgroundColor: DefaultColor.white, flex: 1 }}>
-              <Header />
-              {children}
-              {loading && <Loader />}
-            </View>
+            {header && <Header />}
+            {children}
+            {loading && <Loader />}
           </SafeAreaView>
         </KeyboardAvoidingView>
       )}
@@ -64,6 +63,6 @@ export default function ViewWithLoading({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
 });
