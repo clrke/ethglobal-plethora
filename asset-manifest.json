@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.481bb5b1.css",
-    "main.js": "/static/js/main.5695b0b4.js",
-    "static/js/787.e7809007.chunk.js": "/static/js/787.e7809007.chunk.js",
-    "index.html": "/index.html",
-    "main.481bb5b1.css.map": "/static/css/main.481bb5b1.css.map",
-    "main.5695b0b4.js.map": "/static/js/main.5695b0b4.js.map",
-    "787.e7809007.chunk.js.map": "/static/js/787.e7809007.chunk.js.map"
+    "main.css": "https://clrke.github.io/ethglobal-plethora/static/css/main.bd1ef56f.css",
+    "main.js": "https://clrke.github.io/ethglobal-plethora/static/js/main.1914039a.js",
+    "static/js/787.e7809007.chunk.js": "https://clrke.github.io/ethglobal-plethora/static/js/787.e7809007.chunk.js",
+    "index.html": "https://clrke.github.io/ethglobal-plethora/index.html",
+    "main.bd1ef56f.css.map": "https://clrke.github.io/ethglobal-plethora/static/css/main.bd1ef56f.css.map",
+    "main.1914039a.js.map": "https://clrke.github.io/ethglobal-plethora/static/js/main.1914039a.js.map",
+    "787.e7809007.chunk.js.map": "https://clrke.github.io/ethglobal-plethora/static/js/787.e7809007.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.481bb5b1.css",
-    "static/js/main.5695b0b4.js"
+    "static/css/main.bd1ef56f.css",
+    "static/js/main.1914039a.js"
   ]
 }
