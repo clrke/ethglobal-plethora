@@ -1,11 +1,13 @@
 import Timer from "./Timer";
 import React from "react";
+import { createProfile } from "./repositories/create-profile";
 
 interface ConnectWalletProps {
   setUser: (walletAddress: string) => void;
+  nickname: string;
 }
 
-const connectWallet = async (setUser: (walletAddress: string) => void) => {
+const connectWallet = async (props: ConnectWalletProps) => {
   try {
     const { ethereum } = window as any;
 
@@ -17,7 +19,7 @@ const connectWallet = async (setUser: (walletAddress: string) => void) => {
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
   
     console.log("Connected", accounts[0]);
-    setUser(accounts[0]);
+    await createProfile(props.nickname, accounts[0]);
   } catch (error) {
       console.log(error)
   }
@@ -25,8 +27,10 @@ const connectWallet = async (setUser: (walletAddress: string) => void) => {
 
 export default function ConnectWallet(props: ConnectWalletProps) {
   return (
-    <button onClick={() => connectWallet(props.setUser)}>
-				Connect Wallet
-		</button>
+    <div className="connect-wallet">
+      <button onClick={() => connectWallet(props)}>
+          Connect Wallet
+      </button>
+    </div>
   )
 }

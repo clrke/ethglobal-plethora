@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client/core';
 import { apolloClient } from './appolo-client';
-
+import { getAuthenticationToken, setAuthenticationToken } from '../../state'
+import { signText } from "../ether-service";
 const GET_CHALLENGE = `
   query($request: ChallengeRequest!) {
     challenge(request: $request) { text }
@@ -38,4 +39,24 @@ export const authenticate = (address: string, signature: string) => {
     },
   });
 };
-// 
+
+export const login = async (address: string) => {
+  if (getAuthenticationToken()) {
+    console.log('login: already logged in');
+    return;
+  }
+
+  console.log('login: address', address);
+
+  // we request a challenge from the server
+  const challengeResponse = await generateChallenge(address);
+
+  // sign the text with the wallet
+  const signature = await signText(challengeResponse.data.challenge.text);
+
+  const accessTokens = await authenticate(address, signature);
+
+  setAuthenticationToken(accessTokens.data.authenticate.accessToken);
+
+  return accessTokens.data;
+};
