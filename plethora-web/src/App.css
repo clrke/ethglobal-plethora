@@ -129,6 +129,50 @@ body {
   }
 }
 
+.auth {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 24px;
+  height: 100vh;
+}
+
+.auth > * {
+  flex: 1;
+}
+
+.noauth {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 24px;
+  height: 100vh;
+}
+
+.auth > * {
+  flex: 1;
+}
+
+.connect-wallet {
+  flex: 1;
+}
+
+.connect-wallet > button {
+  background-color: #eee;
+  color: black;
+  border-radius: 12px;
+  border: 1px #61dafb solid;
+  padding: 24px;
+  width: 400px;
+  font-size: 42px;
+  cursor: pointer;
+  opacity: 0;
+
+  animation: fade-in 1s ease-in forwards;
+
+  transition: all 0.2s ease-in-out;
+}
+
 .qna {
   background-color: black;
   color: white;

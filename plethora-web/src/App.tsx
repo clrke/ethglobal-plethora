@@ -10,6 +10,7 @@ import QnA from "./QnA";
 import ConnectWallet from './ConnectWallet';
 
 function App() {
+  const [nickname, setNickname] = useState<string>("");
   const [user, setUser] = useState<string | null>(null);
   const [answer, setAnswer] = useState<number>(-1);
   const [questionTime, setQuestionTime] = useState<boolean>(false);
@@ -69,29 +70,32 @@ function App() {
         />
       </section>
       {user ? (
-        <QnA
-          answer={answer}
-          setAnswer={setAnswer}
-          questionTime={questionTime}
-          setQuestionTime={setQuestionTime}
-        />
+        <section className="auth">
+          Logged in as {user}
+          <QnA
+            answer={answer}
+            setAnswer={setAnswer}
+            questionTime={questionTime}
+            setQuestionTime={setQuestionTime}
+          />
+        </section>
       ) : (
-        <ConnectWallet setUser={setUser} />
+        <section className="non-auth">
+          <input
+            type="text"
+            name="nickcname"
+            value={nickname}
+            onChange={e => setNickname(e.target.value)}
+            placeholder="Set your nickname"
+          />
+          <ConnectWallet
+            setUser={setUser}
+            nickname={nickname}
+          />
+        </section>
       )}
     </div>
   );
 }
 
 export default App;
-
-let authenticationToken: string | null = null;
-
-export let setAuthenticationToken = (token: string) => {
-  authenticationToken = token;
-  console.log('setAuthenticationToken: token', token);
-};
-
-function getAuthenticationToken() {
-  return authenticationToken;
-}
-
