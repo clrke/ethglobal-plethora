@@ -29,14 +29,6 @@ interface QnAProps {
 export default function QnA(props: QnAProps) {
   return (
     <section className="qna" onClick={() => props.setQuestionTime(true)}>
-      <div className="cubes">
-        <div className="cube" />
-        <div className="cube" />
-        <div className="cube" />
-        <div className="cube" />
-        <div className="cube" />
-        <div className="cube" />
-      </div>
       {props.questionTime && (
         <>
           <h1 className="question">

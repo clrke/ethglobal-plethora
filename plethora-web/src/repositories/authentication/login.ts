@@ -58,5 +58,7 @@ export const login = async (address: string) => {
 
   setAuthenticationToken(accessTokens.data.authenticate.accessToken);
 
+  localStorage.setItem('auth_token', accessTokens.data.authenticate.accessToken);
+
   return accessTokens.data;
 };

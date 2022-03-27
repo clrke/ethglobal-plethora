@@ -7,21 +7,20 @@ interface ConnectWalletProps {
 }
 
 const connectWallet = async (props: ConnectWalletProps) => {
-  try {
-    const { ethereum } = window as any;
+  const { ethereum } = window as any;
 
-    if (!ethereum) {
-      alert("Get MetaMask -> https://metamask.io/");
-      return;
-    }
-
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-
-    console.log("Connected", accounts[0]);
-    await createProfile(props.nickname, accounts[0]);
-  } catch (error) {
-    console.log(error)
+  if (!ethereum) {
+    alert("Get MetaMask -> https://metamask.io/");
+    return;
   }
+
+  const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+
+  console.log("Connected", accounts[0]);
+
+  await createProfile(props.nickname, accounts[0]);
+
+  props.setUser(props.nickname);
 }
 
 export default function ConnectWallet(props: ConnectWalletProps) {

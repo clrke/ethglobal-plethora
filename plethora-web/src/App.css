@@ -146,12 +146,24 @@ body {
     flex: 1;
 }
 
-.noauth {
+.non-auth {
     display: flex;
     flex-direction: column;
     color: white;
     font-size: 24px;
     height: 100vh;
+}
+
+.non-auth input {
+    background-color: #eee;
+    color: black;
+    border-radius: 12px;
+    border: 1px black solid;
+    font-size: 42px;
+    padding: 24px;
+    margin: 24px;
+
+    z-index: 2;
 }
 
 .auth > * {
@@ -160,13 +172,15 @@ body {
 
 .connect-wallet {
     flex: 1;
+
+    z-index: 2;
 }
 
 .connect-wallet > button {
-    background-color: #eee;
+    background-color: #61dafb;
     color: black;
     border-radius: 12px;
-    border: 1px #61dafb solid;
+    border: 1px black solid;
     padding: 24px;
     width: 400px;
     font-size: 42px;
@@ -176,6 +190,8 @@ body {
     animation: fade-in 1s ease-in forwards;
 
     transition: all 0.2s ease-in-out;
+
+    z-index: 2;
 }
 
 .qna {

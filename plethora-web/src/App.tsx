@@ -48,7 +48,15 @@ function App() {
       </section>
       {user ? (
         <section className="auth">
-          Logged in as {user}
+          <div className="cubes">
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+          </div>
+          Hello, {user}!
           <QnA
             answer={answer}
             setAnswer={setAnswer}
@@ -58,6 +66,14 @@ function App() {
         </section>
       ) : (
         <section className="non-auth">
+          <div className="cubes">
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+            <div className="cube" />
+          </div>
           <input
             type="text"
             name="nickcname"

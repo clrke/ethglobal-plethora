@@ -34,9 +34,7 @@ export const createProfile = async (nickname: string, address: string) => {
 
     await login(address);
 
-    const createProfileResult = await createProfileRequest({
-        handle: nickname, // change it to user nickname
+    return await createProfileRequest({
+        handle: nickname,
     });
-
-    return createProfileResult;
 };
