@@ -1,9 +1,8 @@
-import React, { ReactChildren, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Hls from "hls.js";
 import Plyr from 'plyr';
 import party from 'party-js';
-import Timer from "./Timer";
 import QnA from "./QnA";
 // import { authenticate, generateChallenge } from './repositories/authentication/login';
 // import { signText } from './repositories/ether-service';
@@ -30,28 +29,6 @@ function App() {
 
     Plyr.setup(video);
   }, []);
-
-  // const login = async (address: string) => {
-  //   if (getAuthenticationToken()) {
-  //     navigation.navigate("CreateProfile");
-
-  //     return;
-  //   }
-
-  //   console.log('login: address', address);
-  //   // const token = await getData('auth_token');
-  //   // we request a challenge from the server
-  //   const challengeResponse = await generateChallenge(address);
-  //   const signature = await signText(challengeResponse.data.challenge.text);
-  //   const accessTokens = await authenticate(address, signature);
-
-  //   if (signature !== null) {// sign the text with the wallet
-
-  //     console.log(signature);
-  //     return accessTokens.data;
-  //   }
-  //   console.log("error");
-  // };
 
   return (
     <div className="App">

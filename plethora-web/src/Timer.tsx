@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 
-function clear(ctx: any) { ctx.clearRect(0, 0, 80, 80); }
+function clear(ctx: any) {
+  ctx.clearRect(0, 0, 80, 80);
+}
 
 function setTrack(ctx: any) {
   ctx.strokeStyle = 'hsla(2, 8%, 46%, 0.45)';
   ctx.lineWidth = 4;
   ctx.beginPath();
-  ctx.arc(36, 36, 27, 0, Math.PI*2);
+  ctx.arc(36, 36, 27, 0, Math.PI * 2);
   ctx.stroke();
 }
 
@@ -18,14 +20,14 @@ function setTime(ctx: any, until: number, now: number, total: number) {
     36,
     36,
     27,
-    Math.PI/-2,
-    ( Math.PI * 2 ) * ( ( until - now % total ) / total ) + ( Math.PI / -2 ),
+    Math.PI / -2,
+    (Math.PI * 2) * ((until - now % total) / total) + (Math.PI / -2),
     false
   );
   ctx.stroke();
 }
 
-export default function Timer(props: {seconds: number}) {
+export default function Timer(props: { seconds: number }) {
 
   const timerRef = useRef<HTMLCanvasElement>(null);
 
