@@ -10,7 +10,7 @@ import QnA from "./QnA";
 import ConnectWallet from './ConnectWallet';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<string | null>(null);
   const [answer, setAnswer] = useState<number>(-1);
   const [questionTime, setQuestionTime] = useState<boolean>(false);
   const videoStream = useRef<HTMLVideoElement>(null);
@@ -76,7 +76,7 @@ function App() {
           setQuestionTime={setQuestionTime}
         />
       ) : (
-        <ConnectWallet />
+        <ConnectWallet setUser={setUser} />
       )}
     </div>
   );
