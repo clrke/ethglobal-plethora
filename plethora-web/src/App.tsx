@@ -56,7 +56,9 @@ function App() {
             <div className="cube" />
             <div className="cube" />
           </div>
-          Hello, {user}!
+          <div className="greetings">
+            Hello, {user}!
+          </div>
           <QnA
             answer={answer}
             setAnswer={setAnswer}

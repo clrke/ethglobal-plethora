@@ -166,7 +166,12 @@ body {
     z-index: 2;
 }
 
-.auth > * {
+.auth > .greetings {
+    flex: 0;
+    align-self: flex-start;
+}
+
+.auth > .qna {
     flex: 1;
 }
 
