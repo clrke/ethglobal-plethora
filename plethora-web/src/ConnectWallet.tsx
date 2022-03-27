@@ -6,5 +6,6 @@ interface ConnectWalletProps {
 
 export default function ConnectWallet(props: ConnectWalletProps) {
   return (
+    <></>
   )
 }
