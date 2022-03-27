@@ -1,0 +1,213 @@
+body {
+  background-color: #000;;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App > section.stream {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+}
+
+.App > section {
+  flex: 1;
+}
+
+.cubes {
+  position: relative;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
+}
+
+.cube:nth-child(2n) {
+  border-color: #0051f4;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 10vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 40vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 45vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+  left: 25vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.qna {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.qna > .question {
+  font-size: 48px;
+  z-index: 2;
+  animation: fade-in 1s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.qna > .answers {
+  flex: 1;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  z-index: 2;
+}
+
+.qna ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.qna ul li {
+  flex: 1;
+  margin: 24px;
+}
+
+.qna button {
+  background-color: #eee;
+  color: black;
+  border-radius: 12px;
+  border: 1px #61dafb solid;
+  padding: 24px;
+  width: 400px;
+  font-size: 42px;
+  cursor: pointer;
+  opacity: 0;
+
+  animation: fade-in 1s ease-in forwards;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.qna ul li:nth-child(1) button {
+  animation-delay: 2s;
+}
+
+.qna ul li:nth-child(2) button {
+  animation-delay: 4s;
+}
+
+.qna ul li:nth-child(3) button {
+  animation-delay: 6s;
+}
+
+.qna button.selected {
+  background-color: #61dafb;
+  color: white;
+}
+
+time {
+  flex: 1;
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards;
+  animation-delay: 8s;
+}
